@@ -1,6 +1,6 @@
 [build]
-  publish = "."
-  command = "npm run build"
+  command = "npm run build"       # 构建命令
+  publish = ".next"               # 指向构建输出的目录
 
 [[redirects]]
   from = "/admin"
