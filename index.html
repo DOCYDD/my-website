@@ -9,11 +9,32 @@
 <body>
 
   <div class="container">
-    <h1>欢迎来到我的博客</h1>
+    <h1>欢迎来到东东的博客</h1>
     <p>这里是我的第一篇博客文章，你可以在这里写更多内容。</p>
 
-    <button onclick="alert('你点击了按钮！')">点击我</button>
+    <button onclick="loadOutput()">加载博客内容</button>
+
+    <!-- 这里是用来显示 output.html 内容的 -->
+    <div id="content"></div>
   </div>
+
+  <script>
+    function loadOutput() {
+      fetch('output.html')  // 确保 output.html 和 index.html 在同一目录
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('加载失败: ' + response.statusText);
+        }
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('content').innerHTML = html;
+      })
+      .catch(error => console.error('出错了:', error));
+    }
+  </script>
 
 </body>
 </html>
+
+
