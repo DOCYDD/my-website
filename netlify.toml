@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build && npm run export"  # 先构建项目，再导出为静态文件
-  publish = "out"                             # 指定静态文件目录
+  command = "node convert.js" # 仅运行转换脚本
+  publish = "."               # 发布根目录
+
 
 [[redirects]]
   from = "/admin"
