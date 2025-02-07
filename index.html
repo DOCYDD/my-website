@@ -40,5 +40,41 @@
     </main>
 
     <footer id="contact">
-        <p>📧 联系邮箱
+        <p>📧 联系邮箱：your-email@example.com</p>
+        <p>© 2025 东东的创作空间. 保留所有权利。</p>
+    </footer>
+
+    <script>
+        // 动态加载内容逻辑
+        async function loadLatestPost() {
+            try {
+                const response = await fetch('output.html');
+                if (!response.ok) throw new Error('加载失败');
+                const html = await response.text();
+                document.getElementById('dynamic-content').innerHTML = html;
+                
+                // 平滑滚动到内容区域
+                document.getElementById('dynamic-content').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } catch (error) {
+                console.error('加载出错:', error);
+                document.getElementById('dynamic-content').innerHTML = 
+                    '<p class="error">暂时无法加载内容，请稍后再试</p>';
+            }
+        }
+
+        // 初始化Netlify Identity
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
 
