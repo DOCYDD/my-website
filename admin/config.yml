@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: DYOPDD/https://github.com/DOCYDD/my-website.git名  # ⚠️ 这里换成你的 GitHub 仓库路径
+  branch: main  # 如果你的默认分支是 main，写 main；如果是 master，写 master
+
+media_folder: "images/uploads" # 图片上传路径
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "博客"
+    folder: "blog" # 博客文章存放的文件夹
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # 文章文件命名格式
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "正文", name: "body", widget: "markdown" }
+      - { label: "封面图片", name: "image", widget: "image" }
