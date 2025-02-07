@@ -2,14 +2,19 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "dependencies": {
-    "marked": "^15.0.6",
-    "next": "^13.0.0",  
-    "react": "^18.0.0",  
-    "react-dom": "^18.0.0"  
+    "next": "^13.0.0",  // Next.js 核心框架
+    "react": "^18.0.0", // React
+    "react-dom": "^18.0.0", // React DOM
+    "marked": "^15.0.6" // 你的其他依赖（例如，marked）
   },
+  "devDependencies": {},
   "scripts": {
-    "build": "next build"
-  }
+    "dev": "next dev",     // 开发模式启动命令
+    "build": "next build", // 构建命令，适用于 Netlify 部署
+    "start": "next start"  // 启动命令（在 Netlify 上通常不需要）
+  },
+  "engines": {
+    "node": "16.x"  // 确保使用合适的 Node.js 版本
+  },
+  "license": "MIT"
 }
-
-
