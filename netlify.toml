@@ -1,9 +1,9 @@
 [build]
-  command = "node convert.js" # 仅运行转换脚本
-  publish = "."               # 发布根目录
-
+  command = "node convert.js"
+  publish = "."
 
 [[redirects]]
-  from = "/admin"
+  from = "/admin/*"
   to = "/admin/index.html"
   status = 200
+
