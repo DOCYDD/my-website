@@ -1,5 +1,4 @@
-{
-  "dependencies": {
-    "marked": "^15.0.6"
-  }
+"scripts": {
+  "build": "next build"
 }
+
