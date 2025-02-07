@@ -36,5 +36,37 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+</head>
+<body>
+
+    <h1>我的博客</h1>
+    <div id="blog-content">加载博客内容中...</div>
+
+    <script>
+        async function loadBlogPosts() {
+            const username = "DOCYDD";  // 你的 GitHub 用户名
+            const repo = "my-website";  // 你的 GitHub 仓库名
+            const response = await fetch(`https://api.github.com/repos/${username}/${repo}/issues`);
+            const issues = await response.json();
+
+            let content = "";
+            issues.forEach(issue => {
+                content += `<h2>${issue.title}</h2><p>${issue.body}</p><hr>`;
+            });
+
+            document.getElementById("blog-content").innerHTML = content;
+        }
+
+        loadBlogPosts();
+    </script>
+
+</body>
+</html>
 
 
