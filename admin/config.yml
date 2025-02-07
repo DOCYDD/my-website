@@ -1,12 +1,13 @@
 backend:
   name: github
-  repo:  DOCYDD/my-website
+  repo: DOCYDD/my-website
   branch: main  # ⚠️ 确保 main / master 正确
+  auth_scope: repo  # ⚠️ 添加身份验证
 
-local_backend: false  # ⚠️ 添加这个可在本地测试 CMS
+local_backend: false  # ⚠️ 禁用本地模式以在 Netlify 运行
 
 publish_mode: editorial_workflow  # ⚠️ 确保这一行存在
-media_folder: "public/uploads"
+media_folder: "public/uploads"  # ⚠️ 修改路径以兼容不同框架
 public_folder: "/uploads"
 
 collections:
@@ -15,10 +16,10 @@ collections:
     folder: "content/blog"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}}"  # ⚠️ 提高 CMS 可读性
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      summary: "{{title}}"  # 在 CMS 里显示标题
 
 backend:
   name: github
