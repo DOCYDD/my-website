@@ -3,11 +3,11 @@ backend:
   repo:  DOCYDD/my-website
   branch: main  # ⚠️ 确保 main / master 正确
 
-local_backend: true  # ⚠️ 添加这个可在本地测试 CMS
+local_backend: false  # ⚠️ 添加这个可在本地测试 CMS
 
 publish_mode: editorial_workflow  # ⚠️ 确保这一行存在
-media_folder: "static/images/uploads"  # ⚠️ 图片存储位置
-public_folder: "/images/uploads"
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "blog"
@@ -18,3 +18,10 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      summary: "{{title}}"  # 在 CMS 里显示标题
+
+backend:
+  name: github
+  repo: DOCYDD/my-website
+  branch: main
+  auth_scope: repo
