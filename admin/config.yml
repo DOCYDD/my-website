@@ -17,3 +17,4 @@ collections:
       - { label: "发布日期", name: "date", widget: "datetime" }
       - { label: "正文", name: "body", widget: "markdown" }
       - { label: "封面图片", name: "image", widget: "image" }
+slug: "{{slug}}" 
