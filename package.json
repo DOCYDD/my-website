@@ -2,19 +2,12 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "dependencies": {
-    "next": "^13.0.0",  
-    "react": "^18.0.0", 
-    "react-dom": "^18.0.0", 
-    "marked": "^15.0.6" 
+    "marked": "^15.0.6",
+    "next": "^12.0.0"  
   },
-  "devDependencies": {},
   "scripts": {
-    "dev": "next dev",     
-    "build": "next build", 
-    "start": "next start"  
-  },
-  "engines": {
-    "node": "16.x"  
-  },
-  "license": "MIT"
+    "build": "next build",       
+    "export": "next export"      
+  }
 }
+
