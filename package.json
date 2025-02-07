@@ -2,10 +2,14 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "dependencies": {
-    "marked": "^15.0.6"
+    "marked": "^15.0.6",
+    "next": "^13.0.0",  // 添加 Next.js 作为依赖
+    "react": "^18.0.0",  // 确保添加了 react 作为依赖
+    "react-dom": "^18.0.0"  // 确保添加了 react-dom 作为依赖
   },
   "scripts": {
     "build": "next build"
   }
 }
+
 
