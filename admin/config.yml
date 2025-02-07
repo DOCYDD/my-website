@@ -1,18 +1,19 @@
 backend:
   name: github
-  repo: DOCYDD/my-website  # 你的 GitHub 仓库名
-  branch: main  # 或者你的主分支（可能是 `master`）
+  repo: DOCYDD/my-website
+  branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "blog"
-    label: "博客"
-    folder: "posts"
+    label: "Blog"
+    folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { name: "title", label: "标题", widget: "string" }
-      - { name: "date", label: "日期", widget: "datetime" }
-      - { name: "body", label: "内容", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
