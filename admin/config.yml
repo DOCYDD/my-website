@@ -3,7 +3,7 @@ backend:
   repo: DOCYDD/my-website  # 你的 GitHub 仓库名
   branch: main  # 或者你的主分支（可能是 `master`）
 
-media_folder: "images/uploads"  # 媒体文件存储路径
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
@@ -16,4 +16,3 @@ collections:
       - { name: "title", label: "标题", widget: "string" }
       - { name: "date", label: "日期", widget: "datetime" }
       - { name: "body", label: "内容", widget: "markdown" }
-
