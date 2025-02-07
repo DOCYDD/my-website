@@ -1,74 +1,46 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的个人博客</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-  <script src="https://unpkg.com/netlify-cms@2/dist/netlify-cms.js"></script>
-
-<body>
-
-  <div class="container">
-    <h1>欢迎来到东东的博客</h1>
-    <p>这里是我的第一篇博客文章，你可以在这里写更多内容。</p>
-
-    <button onclick="loadOutput()">加载博客内容</button>
-
-    <!-- 这里是用来显示 output.html 内容的 -->
-    <div id="content"></div>
-  </div>
-
-  <script>
-    function loadOutput() {
-      fetch('output.html')  // 确保 output.html 和 index.html 在同一目录
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('加载失败: ' + response.statusText);
-        }
-        return response.text();
-      })
-      .then(html => {
-        document.getElementById('content').innerHTML = html;
-      })
-      .catch(error => console.error('出错了:', error));
-    }
-  </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的博客</title>
+    <title>欢迎来到东东的博客</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+    <header>
+        <h1>欢迎来到我的创意空间</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">最新博客</a></li>
+                <li><a href="works.html">作品集</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1>我的博客</h1>
-    <div id="blog-content">加载博客内容中...</div>
+    <main class="container">
+        <section class="intro">
+            <h2>👋 你好，我是东东！</h2>
+            <p>这里记录我的编程学习历程和创意作品</p>
+            <button class="cta-button" onclick="loadLatestPost()">查看最新文章</button>
+        </section>
 
-    <script>
-        async function loadBlogPosts() {
-            const username = "DOCYDD";  // 你的 GitHub 用户名
-            const repo = "my-website";  // 你的 GitHub 仓库名
-            const response = await fetch(`https://api.github.com/repos/${username}/${repo}/issues`);
-            const issues = await response.json();
+        <section id="featured-content">
+            <!-- 动态加载Markdown内容 -->
+            <div id="dynamic-content"></div>
+        </section>
 
-            let content = "";
-            issues.forEach(issue => {
-                content += `<h2>${issue.title}</h2><p>${issue.body}</p><hr>`;
-            });
+        <!-- Netlify CMS 入口 -->
+        <div class="admin-link">
+            <a href="/admin/">管理后台</a>
+        </div>
+    </main>
 
-            document.getElementById("blog-content").innerHTML = content;
-        }
+    <footer id="contact">
+       
 
-        loadBlogPosts();
-    </script>
-
-</body>
-</html>
 
 
