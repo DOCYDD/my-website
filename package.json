@@ -1,4 +1,27 @@
-"scripts": {
-  "build": "next build"
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "A Next.js project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^13.0.0", // 或根据你的 Next.js 版本进行修改
+    "react": "^18.0.0", // 根据你的 React 版本进行修改
+    "react-dom": "^18.0.0" // 根据你的 React 版本进行修改
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0", // 如果你需要使用 eslint 来检查代码
+    "eslint-config-next": "^13.0.0" // Next.js 默认的 eslint 配置
+  },
+  "engines": {
+    "node": ">=14.0.0", // 指定 Node.js 的版本要求
+    "npm": ">=6.0.0" // 指定 npm 的版本要求
+  },
+  "author": "",
+  "license": "ISC"
 }
-
