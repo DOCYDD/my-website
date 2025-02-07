@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: DYOPDD/https://github.com/DOCYDD/my-website.git  # ⚠️ 这里换成你的 GitHub 仓库路径
+  repo: DOCYDD/my-website  # 你的 GitHub 用户名 + 仓库名
   branch: main  # 如果你的默认分支是 main，写 main；如果是 master，写 master
 
 media_folder: "images/uploads" # 图片上传路径
