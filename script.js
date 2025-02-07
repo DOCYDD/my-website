@@ -15,3 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
         blogContainer.appendChild(article);
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const worksContainer = document.getElementById("works-container");
+
+    // 作品数据
+    const works = [
+        { img: "images/example.jpg", name: "作品 1" },
+        { img: "images/example.jpg", name: "作品 2" },
+        { img: "images/example.jpg", name: "作品 3" }
+    ];
+
+    // 动态生成作品
+    works.forEach(work => {
+        let workItem = document.createElement("div");
+        workItem.classList.add("work-item");
+        workItem.innerHTML = `<img src="${work.img}" alt="${work.name}"><p>${work.name}</p>`;
+        worksContainer.appendChild(workItem);
+    });
+});

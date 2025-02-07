@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #007bff;
+    background: #1eff00;
     color: white;
     padding: 10px 0;
 }
@@ -59,7 +59,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: #007bff;
+    background: #ff6600;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -68,4 +68,63 @@ header {
 
 main {
     margin-top: 80px; /* 避免内容被固定的导航栏遮挡 */
+}
+button:hover {
+    background-color: #2100b3;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+/* 设置全局字体、背景 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* 让文章部分更有层次感 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题样式 */
+h1, h2, h3 {
+    color: #444;
+}
+
+/* 超链接样式 */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 让代码块更美观 */
+pre {
+    background: #272822;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* 让列表更好看 */
+ul {
+    padding-left: 20px;
+}
+
+/* 让图片适应页面 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
